@@ -13,4 +13,8 @@ module br.com.marcelo.javafx {
 
     opens br.com.marcelo.javafx to javafx.fxml;
     exports br.com.marcelo.javafx;
+
+    ////////////
+
+    opens br.com.marcelo.javafx.basico;
 }
