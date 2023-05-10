@@ -9,21 +9,37 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class Contador extends Application {
+
+    private int contador = 0;
+
     @Override
     public void start(Stage stage) throws Exception {
 
         Label labelTitulo = new Label("Contador");
-        Label labelNumero = new Label("0");
+        Label labelNumero = new Label(String.valueOf(contador));
 
         Button botaoDecremento = new Button("-");
-        Button botaoIncremento = new Button("+");
+        botaoDecremento.setOnAction(e -> {
+            contador--;
+            labelNumero.setText(Integer.toString(contador));
+        });
 
+        Button botaoIncremento = new Button("+");
+        botaoIncremento.setOnAction(e -> {
+            contador++;
+            labelNumero.setText(Integer.toString(contador));
+        });
+
+        
         HBox boxBotoes = new HBox();
         boxBotoes.setAlignment(Pos.CENTER);
         boxBotoes.setSpacing(10);
         boxBotoes.getChildren().add(botaoDecremento);
         boxBotoes.getChildren().add(botaoIncremento);
+
 
         VBox boxPrincipal = new VBox();
         boxPrincipal.setSpacing(10);
