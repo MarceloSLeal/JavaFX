@@ -50,10 +50,10 @@ public class Contador extends Application {
         boxConteudo.getChildren().add(labelNumero);
         boxConteudo.getChildren().add(boxBotoes);
 
-//        String caminhoCss = getClass().getResource("basico/Contador.css").toExternalForm();
+        String caminhoCss = getClass().getResource("/br/com/marcelo/javafx/basico/Contador.css").toExternalForm();
 
         Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
-//        cenaPrincipal.getStylesheets().add(caminhoCss);
+        cenaPrincipal.getStylesheets().add(caminhoCss);
         cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css?family=Oswald");
 
         stage.setScene(cenaPrincipal);
