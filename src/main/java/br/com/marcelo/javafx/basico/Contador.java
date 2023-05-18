@@ -9,9 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-public class Contador extends Application {
+public class Contador extends Application { 
 
     private int contador = 0;
 
@@ -19,12 +17,15 @@ public class Contador extends Application {
     public void start(Stage stage) throws Exception {
 
         Label labelTitulo = new Label("Contador");
+        labelTitulo.getStyleClass().add("titulo");
+
         Label labelNumero = new Label(String.valueOf(contador));
+        labelNumero.getStyleClass().add("numero");
 
         Button botaoDecremento = new Button("-");
         botaoDecremento.setOnAction(e -> {
             contador--;
-            labelNumero.setText(Integer.toString(contador));
+            labelNumero.setText(Integer.toString(contador)); 
         });
 
         Button botaoIncremento = new Button("+");
@@ -41,18 +42,21 @@ public class Contador extends Application {
         boxBotoes.getChildren().add(botaoIncremento);
 
 
-        VBox boxPrincipal = new VBox();
-        boxPrincipal.setSpacing(10);
-        boxPrincipal.setAlignment(Pos.CENTER);
-        boxPrincipal.getChildren().add(labelTitulo);
-        boxPrincipal.getChildren().add(labelNumero);
-        boxPrincipal.getChildren().add(boxBotoes);
+        VBox boxConteudo = new VBox();
+        boxConteudo.getStyleClass().add("conteudo");
+        boxConteudo.setSpacing(10);
+        boxConteudo.setAlignment(Pos.CENTER);
+        boxConteudo.getChildren().add(labelTitulo);
+        boxConteudo.getChildren().add(labelNumero);
+        boxConteudo.getChildren().add(boxBotoes);
 
-        Scene cenaPrincipal = new Scene(boxPrincipal, 400, 400);
+//        String caminhoCss = getClass().getResource("basico/Contador.css").toExternalForm();
+
+        Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
+//        cenaPrincipal.getStylesheets().add(caminhoCss);
+        cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css?family=Oswald");
 
         stage.setScene(cenaPrincipal);
-        stage.show();
-
         stage.show();
 
     }
