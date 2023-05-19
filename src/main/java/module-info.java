@@ -17,4 +17,5 @@ module br.com.marcelo.javafx {
     ////////////
 
     opens br.com.marcelo.javafx.basico;
+    opens br.com.marcelo.javafx.layout;
 }
