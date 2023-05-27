@@ -5,13 +5,16 @@
 
 
 <GridPane xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="br.com.marcelo.javafx.fxml.LoginControlador">
+          fx:controller="br.com.marcelo.javafx.fxml.LoginControlador"
+    styleClass="login">
 
     <Label text="Seja bem vindo"
+           styleClass="login-titulo"
            GridPane.columnIndex="0" GridPane.rowIndex="0">""
     </Label>
 
     <Label text="Email: "
+           styleClass="login-form-label"
            GridPane.columnIndex="0" GridPane.rowIndex="1">""
     </Label>
     <TextField fx:id="campoEmail"
@@ -19,6 +22,7 @@
     </TextField>
 
     <Label text="Senha: "
+           styleClass="login-form-label"
            GridPane.columnIndex="0" GridPane.rowIndex="2">""
     </Label>
     <PasswordField fx:id="campoSenha"
@@ -27,6 +31,7 @@
 
 
     <Button text="Entrar"
+            styleClass="login-form-botao"
             GridPane.columnIndex="0" GridPane.rowIndex="3"
     onAction="#entrar">
     </Button>
